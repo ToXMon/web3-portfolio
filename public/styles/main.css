@@ -78,11 +78,38 @@ p {
     transition: all 0.3s ease;
     min-width: 180px;
     text-align: center;
+    font-family: inherit;
+    font-size: 1rem;
 }
 
 .button:hover {
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.button.connected {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    font-family: monospace;
+}
+
+/* Mobile wallet modal animations */
+.wallet-modal {
+    animation: fadeIn 0.3s ease;
+}
+
+.wallet-modal-content {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 nav {
