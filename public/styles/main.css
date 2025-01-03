@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Helvetica', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica', sans-serif;
     color: var(--accent-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -29,6 +29,13 @@ body {
     height: 100%;
     z-index: -1;
     background-color: var(--background-color);
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.logo-image, .button, .skill-tag, .link-button {
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 main {

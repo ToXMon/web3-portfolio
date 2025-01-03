@@ -11,32 +11,26 @@
     <meta name="keywords" content="Web3, Blockchain, AI, Machine Learning, Data Engineering, Crypto, Developer, Engineer">
     <meta name="author" content="Tolu Shekoni">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.com/">
-    <meta property="og:title" content="Tolu Shekoni - Web3 Developer & Blockchain Engineer">
-    <meta property="og:description" content="Web3 developer specializing in blockchain, AI, and data engineering. Exploring the intersection of crypto, machine learning, and decentralized technologies.">
-    <meta property="og:image" content="./assets/thumbnail_landing page.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://your-domain.com/">
-    <meta property="twitter:title" content="Tolu Shekoni - Web3 Developer & Blockchain Engineer">
-    <meta property="twitter:description" content="Web3 developer specializing in blockchain, AI, and data engineering. Exploring the intersection of crypto, machine learning, and decentralized technologies.">
-    <meta property="twitter:image" content="./assets/thumbnail_landing page.png">
-
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles/main.css" as="style">
+    <link rel="preload" href="assets/android-icon-192x192.png" as="image">
+    
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
-    <link rel="manifest" href="./assets/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
 
-    <!-- Styles and Scripts -->
-    <link rel="stylesheet" href="./styles/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Defer non-critical scripts -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script defer src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script defer src="utils/vanta.js"></script>
+    <script defer src="utils/wallet.js"></script>
 </head>
 <body>
     <div id="background"></div>
@@ -111,7 +105,5 @@
             <a href="https://linkedin.com" class="link-button" target="_blank">LinkedIn</a>
         </section>
     </main>
-    <script src="./utils/vanta.js"></script>
-    <script src="./utils/wallet.js"></script>
 </body>
 </html> 
