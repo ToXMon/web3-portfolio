@@ -1,0 +1,21 @@
+{
+    "name": "Tolu Shekoni - Web3 Developer",
+    "short_name": "Tolu Shekoni",
+    "description": "Web3 developer specializing in blockchain, AI, and data engineering",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#333333",
+    "icons": [
+        {
+            "src": "/assets/android-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/apple-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+} 

@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0x0,
-        shininess: 60.00,
-        waveHeight: 20.00,
-        waveSpeed: 1.00,
-        zoom: 0.65
+        color: 0x333333,
+        shininess: 25.00,
+        waveHeight: 10.00,
+        waveSpeed: 0.50,
+        zoom: 0.75,
+        backgroundColor: 0x000000
     });
 }); 
