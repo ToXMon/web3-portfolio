@@ -1,0 +1,16 @@
+{
+  "name": "cursor-app-attempt-2",
+  "version": "1.0.0",
+  "description": "Web3 Developer Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server ./public -p 3001 -c-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
