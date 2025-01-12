@@ -3,6 +3,7 @@
     --secondary-color: #f2f2f2;
     --accent-color: #ffffff;
     --text-color: #000000;
+    --background-color: #1a1a1a;
 }
 
 * {
@@ -12,10 +13,13 @@
 }
 
 body {
-    font-family: 'Helvetica', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+'Helvetica', sans-serif;
     color: var(--accent-color);
     line-height: 1.6;
     overflow-x: hidden;
+    background-color: var(--background-color);
+    min-height: 100vh;
 }
 
 #background {
@@ -25,6 +29,14 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+    background-color: var(--background-color);
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.logo-image, .button, .skill-tag, .link-button {
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 main {
@@ -42,7 +54,8 @@ main {
 }
 
 #hero {
-    padding: 4rem 0;
+    padding-top: 6rem; /* Ensures the hero section starts below the header */
+    padding-bottom: 4rem;
 }
 
 h1 {
@@ -67,11 +80,37 @@ p {
     transition: all 0.3s ease;
     min-width: 180px;
     text-align: center;
+    font-family: inherit;
+    font-size: 1rem;
 }
 
 .button:hover {
     background-color: var(--accent-color);
-    color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.button.connected {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    font-family: monospace;
+}
+
+.wallet-modal {
+    animation: fadeIn 0.3s ease;
+}
+
+.wallet-modal-content {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 nav {
@@ -127,23 +166,23 @@ nav a:hover {
     h1 {
         font-size: 2.5rem;
     }
-    
+
     nav {
         gap: 1rem;
     }
-    
+
     .button {
         width: 100%;
         margin: 0.5rem 0;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
     }
-    
+
     .button {
         width: 100%;
         min-width: unset;
@@ -199,35 +238,14 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    #bio {
-        padding: 2rem 1rem;
-    }
-    
-    .bio-content p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-    
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 0.8rem;
-    }
-    
-    .skill-tag {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.85rem;
-    }
-}
-
 .social-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem; /* Reduced padding to make the header thinner */
     z-index: 100;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(26, 26, 26, 0.9);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
@@ -241,8 +259,8 @@ nav a:hover {
 }
 
 .logo-image {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px; /* Reduced size for the logo to make the header less tall */
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-color);
@@ -253,64 +271,3 @@ nav a:hover {
     transform: scale(1.05);
     border-color: rgba(255, 255, 255, 0.8);
 }
-
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
-
-.social-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.social-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
-.social-link:hover {
-    opacity: 1;
-}
-
-.social-link:hover::after {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .social-header {
-        flex-direction: column;
-        gap: 1rem;
-        position: static;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        width: 100%;
-    }
-
-    .logo-image {
-        width: 40px;
-        height: 40px;
-    }
-
-    .social-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .social-link {
-        font-size: 0.8rem;
-    }
-} 
